@@ -1,0 +1,13 @@
+services:
+  - type: worker
+    name: bloom-atelier-bot
+    runtime: python
+    repo: https://github.com/Janipan28/bloom-atelier-bot
+    branch: master
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m bot.main
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      - key: PYTHON_VERSION
+        value: "3.11.9"
